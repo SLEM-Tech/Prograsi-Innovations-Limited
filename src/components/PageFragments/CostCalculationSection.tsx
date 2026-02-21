@@ -213,44 +213,43 @@ const CostCalculationSection = () => {
 	}
 
 	return (
-		<section className=''>
-			{!paylater ? (
-				<div className='flex flex-col bg-white border-[1px] border-[#E9E9E9]'>
-					<h4 className='text-center py-3 sm:py-6 text-sm sm:text-base font-[400] leading-[1.3] text-secondary-200'>
-						Cost Calculator
-					</h4>
-					<hr className='text-[#E9E9E9] w-full' />
-					<h4 className='text-center px-3 md:px-12 pt-2 sm:pt-4 pb-3 sm:pb-6 text-xs sm:text-sm font-[400] leading-[1.8] text-secondary-200'>
-						Select product to see the payment plan
-					</h4>
-				</div>
-			) : (
-				<>
-					<div className='flex flex-col bg-white border-[1px] border-[#E9E9E9] pt-5 px-6 transition'>
-						<div className='flex flex-col gap-3 sm:gap-4 mb-4'>
-							<h4 className='text-xs sm:text-sm font-[400] leading-[1.3] text-secondary-200'>
-								Available Plan
-							</h4>
-							<h4 className='text-sm sm:text-base font-[400] leading-[1.3] text-secondary-200'>
-								{paylater[0].months} Months
-							</h4>
-						</div>
-						<hr className='text-[#E9E9E9] w-full' />
-						<div className='flex justify-between my-4'>
-							<div className='flex flex-col gap-4'>
-								<h4 className='text-xs sm:text-sm font-[400] leading-[1.3] text-secondary-200'>
-									Initial deposit
-								</h4>
-								<h4 className='text-sm sm:text-base font-bold leading-[1.3] text-secondary-200'>
-									{initialDeposit && FormatMoney2(initialDeposit)}
-								</h4>
-							</div>
-							<h4 className='text-xs sm:text-sm font-[400] leading-[1.3] text-secondary-200 flex items-end'>
-								Today
-							</h4>
-						</div>
-						{monthElements}
-						{/* <hr className='text-[#E9E9E9] w-full' />
+    <section className="">
+      {!paylater ?
+        <div className="flex flex-col bg-white border-[1px] border-[#E9E9E9]">
+          <h4 className="text-center py-3 sm:py-6 text-sm sm:text-base font-[400] leading-[1.3] text-secondary-200">
+            Cost Calculator
+          </h4>
+          <hr className="text-[#E9E9E9] w-full" />
+          <h4 className="text-center px-3 md:px-12 pt-2 sm:pt-4 pb-3 sm:pb-6 text-xs sm:text-sm font-[400] leading-[1.8] text-secondary-200">
+            Select product to see the payment plan
+          </h4>
+        </div>
+      : <>
+          <div className="flex flex-col bg-white border-[1px] border-[#E9E9E9] pt-5 px-6 transition">
+            <div className="flex flex-col gap-3 sm:gap-4 mb-4">
+              <h4 className="text-xs sm:text-sm font-[400] leading-[1.3] text-secondary-200">
+                Available Plan
+              </h4>
+              <h4 className="text-sm sm:text-base font-[400] leading-[1.3] text-secondary-200">
+                {paylater[0].months} Months
+              </h4>
+            </div>
+            <hr className="text-[#E9E9E9] w-full" />
+            <div className="flex justify-between my-4">
+              <div className="flex flex-col gap-4">
+                <h4 className="text-xs sm:text-sm font-[400] leading-[1.3] text-secondary-200">
+                  Initial deposit
+                </h4>
+                <h4 className="text-sm sm:text-base font-bold leading-[1.3] text-secondary-200">
+                  {initialDeposit && FormatMoney2(initialDeposit)}
+                </h4>
+              </div>
+              <h4 className="text-xs sm:text-sm font-[400] leading-[1.3] text-secondary-200 flex items-end">
+                Today
+              </h4>
+            </div>
+            {monthElements}
+            {/* <hr className='text-[#E9E9E9] w-full' />
 						<div className='flex justify-between my-6 '>
 							<div className='flex flex-col gap-4'>
 								<h4 className='text-xs sm:text-sm leading-[1.3] text-secondary-200'>
@@ -279,75 +278,70 @@ const CostCalculationSection = () => {
 						</div>
 						<hr className='text-[#E9E9E9] w-full' /> */}
 
-						<div className='flex gap-5 bg-[#D1FAE5] px-5 py-2 my-3'>
-							<h4 className='text-sm sm:text-base'>Total</h4>
-							<h4 className='text-sm sm:text-base text-primary-300 font-bold'>
-								{Total && FormatMoney2(Total)}
-							</h4>
-						</div>
+            <div className="flex gap-5 bg-[#D1FAE5] px-5 py-2 my-3">
+              <h4 className="text-sm sm:text-base">Total</h4>
+              <h4 className="text-sm sm:text-base text-primary-300 font-bold">
+                {Total && FormatMoney2(Total)}
+              </h4>
+            </div>
 
-						<div className='flex gap-2 sm:gap-4 px-2 items-center mt-3 mb-3 sm:mb-10'>
-							<input
-								id='checkbox'
-								type='checkbox'
-								checked={acceptedTerms}
-								onChange={handleTermsChange}
-								className='mr-2 cursor-pointer'
-							/>
-							<label
-								htmlFor='checkbox'
-								className='flex items-center cursor-pointer'
-							>
-								<span className='text-[10px] sm:text-xs'>
-									I have accepted the{" "}
-									<span
-										onClick={() => router.push("/terms-of-use")}
-										className='text-primary font-bold hover:underline transition'
-									>
-										terms & conditions
-									</span>{" "}
-									of Nestora Digital Innovations
-								</span>
-							</label>
-						</div>
+            <div className="flex gap-2 sm:gap-4 px-2 items-center mt-3 mb-3 sm:mb-10">
+              <input
+                id="checkbox"
+                type="checkbox"
+                checked={acceptedTerms}
+                onChange={handleTermsChange}
+                className="mr-2 cursor-pointer"
+              />
+              <label
+                htmlFor="checkbox"
+                className="flex items-center cursor-pointer">
+                <span className="text-[10px] sm:text-xs">
+                  I have accepted the{" "}
+                  <span
+                    onClick={() => router.push("/terms-of-use")}
+                    className="text-primary font-bold hover:underline transition">
+                    terms & conditions
+                  </span>{" "}
+                  of Prograsi Innovations Limited
+                </span>
+              </label>
+            </div>
 
-						<button
-							disabled={!acceptedTerms}
-							onClick={handlePaylaterProductClick}
-							className={`w-full py-2 sm:py-3 text-white text-sm mb-5 sm:mb-10 rounded-md ${
-								acceptedTerms
-									? "bg-primary cursor-pointer"
-									: "bg-primary/60 cursor-not-allowed"
-							}`}
-						>
-							{isLoading ? (
-								<ClipLoader color='#d4d3d3' size={20} />
-							) : (
-								"Buy and Pay later"
-							)}
-						</button>
-					</div>
-					{/* <BuyNowPaylaterModal1 />
+            <button
+              disabled={!acceptedTerms}
+              onClick={handlePaylaterProductClick}
+              className={`w-full py-2 sm:py-3 text-white text-sm mb-5 sm:mb-10 rounded-md ${
+                acceptedTerms ?
+                  "bg-primary cursor-pointer"
+                : "bg-primary/60 cursor-not-allowed"
+              }`}>
+              {isLoading ?
+                <ClipLoader color="#d4d3d3" size={20} />
+              : "Buy and Pay later"}
+            </button>
+          </div>
+          {/* <BuyNowPaylaterModal1 />
 					<BuyNowPaylaterModal2 /> */}
-					<BuyNowPayLaterSuccessModal />
-					<SignupModal
-						isOpen={isModalOpen ? true : false}
-						onClose={handleCloseModal}
-						setIsOpen={setIsModalOpen}
-						content={<AuthModalContent />}
-						buttonText='Login'
-					/>
-					<SignupModal
-						isOpen={isNotKycModalOpen ? true : false}
-						onClose={handleKYCCloseModal}
-						content={<AuthModalKYCContent />}
-						setIsOpen={setIsNotKycModalOpen}
-						buttonText='Update KYC'
-					/>
-				</>
-			)}
-		</section>
-	);
+          <BuyNowPayLaterSuccessModal />
+          <SignupModal
+            isOpen={isModalOpen ? true : false}
+            onClose={handleCloseModal}
+            setIsOpen={setIsModalOpen}
+            content={<AuthModalContent />}
+            buttonText="Login"
+          />
+          <SignupModal
+            isOpen={isNotKycModalOpen ? true : false}
+            onClose={handleKYCCloseModal}
+            content={<AuthModalKYCContent />}
+            setIsOpen={setIsNotKycModalOpen}
+            buttonText="Update KYC"
+          />
+        </>
+      }
+    </section>
+  );
 };
 
 export default CostCalculationSection;
