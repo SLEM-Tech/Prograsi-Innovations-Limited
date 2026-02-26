@@ -4,8 +4,8 @@ import Picture from "@src/components/picture/Picture";
 const page = () => {
   return (
     <AppLayout>
-      <main className="bg-white mx-auto mt-32 md:mt-36 pb-10 slg:pb-32">
-        <section className="flex w-full flex-col items-center pt-7 slg:pt-16 gap-4 px-16 text-center">
+      <main className="bg-white mx-auto mt-28 md:mt-36 pb-10 slg:pb-32">
+        <section className="flex w-full flex-col items-center pt-7 slg:pt-16 gap-4 px-4 sm:px-8 slg:px-16 text-center">
           <h3 className="font-semibold  text-xl md:text-3xl tracking-tighter">
             About Us
           </h3>

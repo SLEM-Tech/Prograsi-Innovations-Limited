@@ -3,7 +3,7 @@ import AllCategorySection from "@src/components/PageFragments/AllCategorySection
 import SortedProducts from "./(Home)/_components/SortedProducts";
 import { SEODATA } from "@constants/seoContants";
 import { Metadata } from "next";
-import AppMenu from "@src/components/Navbars/AppMenu";
+// import AppMenu from "@src/components/Navbars/AppMenu";
 import FaqAccordion from "@src/components/Reusables/Accordion/FaqAccordion";
 import MachineMaintenance from "./(Home)/_components/MachineMaintenance";
 
@@ -26,7 +26,7 @@ const page = () => {
   return (
     <AppLayout>
       <AllCategorySection />
-      <div className="mx-auto pl-2 mt-4">
+      <div className="mx-auto px-2 sm:px-4 mt-4">
         <SortedProducts />
       </div>
       {/* <MachineMaintenance /> */}
@@ -40,7 +40,7 @@ const page = () => {
           </section>
         </div>
       </div>
-      <AppMenu />
+      {/* <AppMenu /> */}
     </AppLayout>
   );
 };

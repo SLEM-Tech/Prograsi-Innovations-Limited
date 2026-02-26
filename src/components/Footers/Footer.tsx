@@ -70,9 +70,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white w-full border-t border-gray-100 pt-16 pb-8">
+    <footer className="bg-white w-full border-t border-gray-100 pt-12 sm:pt-16 pb-4 sm:pb-8">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-16">
           {/* Column 1: LOGO */}
           <div className="flex flex-col gap-6">
             <div className="">
