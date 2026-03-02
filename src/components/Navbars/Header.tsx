@@ -118,10 +118,8 @@ const Header = () => {
         {/* Desktop Header */}
         <div className="hidden slg:flex items-center justify-between w-full py-3 max-w-[1440px] px-8 mx-auto">
           {/* Left — Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-bold italic text-[#1B4332] tracking-wide select-none shrink-0">
-            LOGO
+          <Link href="/" className="shrink-0">
+            <LogoImage className="!w-[120px]" />
           </Link>
 
           {/* Center — Nav Links */}
@@ -270,14 +268,14 @@ const Header = () => {
         <div className="hidden slg:block h-[1px] bg-gray-200" />
 
         {/* Mobile Header (Hidden on Laptop) */}
-        <div className="slg:hidden flex flex-col w-full p-4 gap-3 bg-black">
+        <div className="slg:hidden flex flex-col w-full px-3 py-3 sm:px-4 sm:py-4 gap-2.5 sm:gap-3 bg-black">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <FiMenu
-                className="text-2xl text-white"
+                className="text-xl sm:text-2xl text-white cursor-pointer"
                 onClick={() => setDrawerVisible(true)}
               />
-              <LogoImage className="!w-[30px] brightness-200" />
+              <LogoImage className="!w-[28px] sm:!w-[34px] brightness-200" />
             </div>
             <div onClick={onOpenCart} className="relative">
               <FiShoppingBag className="text-2xl text-white" />
@@ -288,11 +286,11 @@ const Header = () => {
               )}
             </div>
           </div>
-          <div className="relative h-10">
+          <div className="relative h-9 sm:h-10">
             <input
               type="text"
               placeholder="Search items..."
-              className="w-full h-full text-sm bg-gray-100 rounded-lg px-4 border-none outline-none focus:ring-2 focus:ring-primary-100"
+              className="w-full h-full text-xs sm:text-sm bg-gray-100 rounded-lg px-3 sm:px-4 border-none outline-none focus:ring-2 focus:ring-primary-100"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}

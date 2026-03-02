@@ -70,15 +70,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white w-full border-t border-gray-100 pt-12 sm:pt-16 pb-4 sm:pb-8">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-16">
+    <footer className="bg-white w-full border-t border-gray-100 pt-8 sm:pt-12 md:pt-16 pb-4 sm:pb-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-10 md:mb-16">
           {/* Column 1: LOGO */}
-          <div className="flex flex-col gap-6">
-            <div className="">
-              <LogoImage className="!w-[150px]" />
+          <div className="flex flex-col gap-4 sm:gap-6 col-span-2 sm:col-span-2 md:col-span-1">
+            <div>
+              <LogoImage className="!w-[110px] sm:!w-[130px] md:!w-[150px]" />
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-xs">
               Premium computer accessories for your daily needs. Quality meets
               affordability.
             </p>
@@ -128,7 +128,7 @@ const Footer = () => {
           ))}
 
           {/* Column 4: Install App */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8 col-span-2 sm:col-span-1">
             <div>
               <h4 className="text-[#1a1a2e] font-bold text-lg mb-6">
                 Install App
@@ -160,8 +160,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-100 pt-8 mt-12">
-          <p className="text-gray-400 text-sm text-center">
+        <div className="border-t border-gray-100 pt-6 sm:pt-8 mt-8 sm:mt-12">
+          <p className="text-gray-400 text-xs sm:text-sm text-center">
             © {currentYear} {CompanyName} All rights reserved.
           </p>
         </div>

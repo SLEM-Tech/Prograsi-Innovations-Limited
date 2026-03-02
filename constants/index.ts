@@ -70,10 +70,8 @@ export const statusStyles: { [key: string]: string } = {
 export const headerNavLinks: linksProps[] = [
   { id: 1, href: "/", text: "Home" },
   { id: 2, href: "/category", text: "Products" },
-  { id: 3, href: "/services", text: "Services" },
-  { id: 4, href: "/about-us", text: "About Us" },
-  { id: 5, href: "/news", text: "News" },
-  { id: 6, href: "/contact-us", text: "Contact" },
+  { id: 3, href: "/about", text: "About Us" },
+  { id: 4, href: "/contact-us", text: "Contact" },
 ];
 
 export interface SectionProps {
