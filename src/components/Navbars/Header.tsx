@@ -268,17 +268,17 @@ const Header = () => {
         <div className="hidden slg:block h-[1px] bg-gray-200" />
 
         {/* Mobile Header (Hidden on Laptop) */}
-        <div className="slg:hidden flex flex-col w-full px-3 py-3 sm:px-4 sm:py-4 gap-2.5 sm:gap-3 bg-black">
+        <div className="slg:hidden flex flex-col w-full px-3 py-3 sm:px-4 sm:py-4 gap-2.5 sm:gap-3 bg-white border-b border-gray-100">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <FiMenu
-                className="text-xl sm:text-2xl text-white cursor-pointer"
+                className="text-xl sm:text-2xl text-black cursor-pointer"
                 onClick={() => setDrawerVisible(true)}
               />
-              <LogoImage className="!w-[28px] sm:!w-[34px] brightness-200" />
+              <LogoImage className="!w-[40px]" />
             </div>
             <div onClick={onOpenCart} className="relative">
-              <FiShoppingBag className="text-2xl text-white" />
+              <FiShoppingBag className="text-2xl text-black" />
               {totalItems > 0 && (
                 <span className="absolute -top-2 -right-2 size-4 bg-blue-600 rounded-full text-[9px] flex items-center justify-center text-white">
                   {totalItems}
