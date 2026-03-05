@@ -59,6 +59,7 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const { data: customer } = useCustomer("");
   const wc_customer_info = useMemo(
@@ -154,18 +155,17 @@ const Header = () => {
 
           {/* Right — Icon Buttons */}
           <div className="flex items-center gap-6 shrink-0">
-            {/* Compare */}
-            <Link
-              href="/compare"
+            {/* Search */}
+            <div
+              onClick={() => setIsSearchOpen((prev) => !prev)}
               className="flex flex-col items-center gap-0.5 text-gray-600 hover:text-gray-900 transition relative group cursor-pointer">
               <span className="relative">
-                <LuArrowLeftRight className="text-[19px]" />
-                <span className="absolute -top-1 -right-1.5 size-[8px] bg-green-500 rounded-full" />
+                <FiSearch className="text-[19px]" />
               </span>
               <span className="text-[10px] font-medium leading-none">
-                Compare
+                Search
               </span>
-            </Link>
+            </div>
 
             {/* Wishlist */}
             <Link
@@ -266,6 +266,33 @@ const Header = () => {
 
         {/* Bottom border line */}
         <div className="hidden slg:block h-[1px] bg-gray-200" />
+
+        {/* Desktop Search Bar (collapsible) */}
+        <div
+          className={`hidden slg:block overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 border-b border-gray-200 ${
+            isSearchOpen ? "max-h-20 py-3" : "max-h-0 py-0"
+          }`}>
+          <div className="max-w-[1440px] mx-auto px-8">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search for products..."
+                className="w-full h-11 text-sm bg-white rounded-xl px-5 pr-12 border border-gray-200 outline-none focus:ring-2 focus:ring-primary-100 focus:border-transparent transition-all"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                autoFocus={isSearchOpen}
+              />
+              {isPending ?
+                <ImSpinner2 className="absolute right-4 top-1/2 -translate-y-1/2 text-primary-100 animate-spin" />
+              : <FiSearch
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer hover:text-primary-100 transition-colors"
+                  onClick={handleSearch}
+                />
+              }
+            </div>
+          </div>
+        </div>
 
         {/* Mobile Header (Hidden on Laptop) */}
         <div className="slg:hidden flex flex-col w-full px-3 py-3 sm:px-4 sm:py-4 gap-2.5 sm:gap-3 bg-white border-b border-gray-100">
