@@ -143,7 +143,7 @@ export const useOrders = (
 				: `/api/order?page=${page}&per_page=${perPage}`;
 			const data = await apiFetch(url, { headers: authHeaders() });
 
-			let orders: any[];
+			let orders: any;
 			if (id) {
 				orders = data;
 			} else {

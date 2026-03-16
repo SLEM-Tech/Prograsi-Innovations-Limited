@@ -26,7 +26,7 @@ const AppMenu = () => {
 	const { data: customer, isLoading, isError } = useCustomer("");
 
 	const { email } = useToken();
-	const wc_customer2_info: Woo_Customer_Type[] = customer;
+	const wc_customer2_info: Woo_Customer_Type[] = customer ?? [];
 	const wc_customer_info: Woo_Customer_Type | undefined =
 		filterCustomersByEmail(wc_customer2_info, email);
 	const firstName = wc_customer_info?.first_name;
@@ -55,7 +55,7 @@ const AppMenu = () => {
 		isError: isErrorOrders,
 	} = useOrders(undefined, currentPage, itemsPerPage);
 
-	const OrderData: OrderGetType[] = ordersData?.data;
+	const OrderData: OrderGetType[] = ordersData?.data ?? [];
 	const totalOrderedItems = ordersData?.totalItems || 0;
 
 	const mobileHeaderLinkUrl = [

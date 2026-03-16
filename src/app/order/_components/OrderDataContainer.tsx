@@ -22,7 +22,7 @@ const OrderDataContainer = () => {
 		isError: isErrorOrder,
 	} = useOrders(`${param.id}`);
 
-	const OrderData = orderData?.data;
+	const OrderData: any = Array.isArray(orderData?.data) ? orderData?.data[0] : orderData?.data;
 
 	// Helper to handle printing only the invoice section if needed
 	const handlePrint = () => {
