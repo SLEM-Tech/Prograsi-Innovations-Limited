@@ -151,9 +151,9 @@ const DeliveryReturn = () => {
         <div className="pt-4 flex items-center gap-3 text-xs font-bold text-primary-100">
           Queries:{" "}
           <a
-            href="mailto:IgweBlessing@nestora.com.ng"
+            href="mailto:IgweBlessing@prograsi.com.ng"
             className="hover:underline">
-            IgweBlessing@nestora.com.ng
+            IgweBlessing@prograsi.com.ng
           </a>
         </div>
       </div>
